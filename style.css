@@ -1,0 +1,209 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS reset -- https://andy-bell.co.uk/a-modern-css-reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* Theme related */
+
+:root {
+  --white: #fff;
+  --blue: #202b52;
+  --moonstone: #23b9d3;
+}
+
+
+/* Contains the content */
+.wrapper {
+  margin: 0 4%;
+}
+
+@media (min-width: 64em) {
+  .wrapper {
+    margin: 0 8%;
+  }
+}
+
+
+@media (min-width: 85.375em) {
+  .wrapper {
+    margin: 0 12%;
+  }
+}
+
+@media (min-width: 120em) {
+  .wrapper {
+    margin: 0 18%;
+  }
+}
+
+
+/* Shows the background image when the hamburger icon is clicked */
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-image: url("/images/header/bg.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--white);
+}
+
+@media (min-width: 64em) {
+  .overlay {
+    display: none;
+  }
+}
+
+/* Prevents scrolling from occuring when mobile menu overlay is visible */
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Links to google forms */
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1rem, 0.9286rem + 0.3571vw, 1.5rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+
+  color: var(--blue);
+  border: 2px solid var(--blue);
+  background-color: var(--white);
+  padding: 0.625rem 4.6875rem;
+  max-width: clamp(22rem, 12.2857rem + 48.5714vw, 90rem);
+  margin: 0 auto;
+  transition: all 0.35s ease-in-out;
+}
+
+@media (min-width: 48em) {
+  .button {
+    display: inline-block;
+    letter-spacing: 0.02rem;
+  }
+}
+
+@media (min-width: 85.375em) {
+  .button {
+    padding: 0.9375rem 3.125rem;
+  }
+}
+
+
+
+
+.button:hover {
+  border: 2px solid var(--white);
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+/* Background image for footer section */
+@media (max-width: 63.9375em) {
+  .footer {
+    background-image: url("/images/footer/shapes--mobile1.5.webp");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(90%);
+  }
+}
+
+
+@media (min-width: 64em) {
+  .footer {
+    background-image: url("/images/footer/shapes--desktop2.webp");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(90%);
+  }
+}
+
+textarea {
+  resize: none;
+}
